@@ -1,5 +1,5 @@
 import * as path from "path";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import multerS3 from "multer-s3";
 import { S3Client } from "@aws-sdk/client-s3";
 
@@ -15,10 +15,10 @@ export function getMulterS3Config(
             s3: s3,
             bucket: bucketName,
             //shouldTransform: true,
-            acl: 'public-read',
+            acl: "public-read",
             contentType: multerS3.AUTO_CONTENT_TYPE,
             metadata: function (req, file, cb) {
-                // console.log('metadata ' + file);
+                // console.log("metadata " + file);
                 cb(null, { fieldName: file.fieldname });
             },
             key: function (req, file, cb) {
