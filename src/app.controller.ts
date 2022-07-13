@@ -3,7 +3,6 @@ import { FileFieldsInterceptor } from "@nestjs/platform-express";
 import { AppService } from './app.service';
 import { Constants } from "./utils/constants";
 import { getMulterS3Config } from "./multer/multer-s3.config";
-import { ConfigService } from "@nestjs/config";
 
 @Controller({
     path: "",
