@@ -28,6 +28,13 @@ class S3NodeClient {
             }
         });
     }
+
+    destroy() {
+        if(!this.s3Client) {
+            return;
+        }
+        this.s3Client.destroy();
+    }
 }
 
 export const S3NodeClientInstance = S3NodeClient.getInstance();
